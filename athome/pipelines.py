@@ -15,7 +15,6 @@ import logging
 from pathlib import Path
 
 class AthomePipeline:
-    new_count = 0
 
     def __init__(self):
         self.df = pd.DataFrame(columns=['href','price', 'm2', 'price_m2', 'place', 'title', 'timestamp', 'status'])
@@ -30,13 +29,16 @@ class AthomePipeline:
             item['m2'] = re.sub(r'''[^0-9\.]''', '', item['m2'])
             if(float(item['m2']) > 0):
                 item['price_m2'] = float(item['price']) / float(item['m2'])
+            else:
+                item['price_m2'] = ''
             item['place'] = re.findall('\s([A-Z][A-zÀ-ÿ-\(\)\s]+)$', item['title'])
             item['status'] = "N"
-            new_count += 1
+            self.new_count += 1
             self.exporter.export_item(item)
         return item
 
     def open_spider(self, spider):
+        self.new_count = 0
         out_file_path = (Path(__file__).parent / f'../output/{spider.name}.csv').resolve()
         logging.log(logging.INFO, f'Output path: {out_file_path}')
             

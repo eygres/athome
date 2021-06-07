@@ -40,5 +40,5 @@ class AthomeDirSpider(scrapy.Spider):
         next_page = response.css('a.nextPage::attr(href)').get()
         if next_page is not None:
             next_page = response.urljoin(next_page)
-            sleep(randrange(5))
+            sleep(randrange(10)) # be nice to the web site
             yield scrapy.Request(next_page, callback=self.parse, headers = self.request_header)

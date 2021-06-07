@@ -21,7 +21,7 @@ class AthomePipeline:
     
     def process_item(self, item, spider):
         if (self.df['href'] == item['href']).any():
-            raise DropItem(f"Duplicate {item['href']}")
+            raise DropItem(f"{spider.name} duplicate {item['href']}")
         else:
             time_stamp = datetime.now()       
             item['timestamp'] = time_stamp.strftime("%Y-%m-%d %H:%M:%S")
@@ -34,6 +34,7 @@ class AthomePipeline:
             item['place'] = re.findall('\s([A-Z][A-zÀ-ÿ-\(\)\s]+)$', item['title'])
             item['status'] = "N"
             self.new_count += 1
+            logging.log(logging.INFO, f'{spider.name} new: {item['href']}')
             self.exporter.export_item(item)
         return item
 

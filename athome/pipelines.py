@@ -34,7 +34,7 @@ class AthomePipeline:
             item['place'] = re.findall('\s([A-Z][A-zÀ-ÿ-\(\)\s]+)$', item['title'])
             item['status'] = "N"
             self.new_count += 1
-            logging.log(logging.INFO, f'{spider.name} new: {item['href']}')
+            logging.log(logging.INFO, f"{spider.name} new: {item['href']}")
             self.exporter.export_item(item)
         return item
 

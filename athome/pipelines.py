@@ -26,11 +26,14 @@ class AthomePipeline:
             time_stamp = datetime.now()       
             item['timestamp'] = time_stamp.strftime("%Y-%m-%d %H:%M:%S")
             item['price'] = re.sub(r'''[^0-9]''', '', item['price'])
-            item['m2'] = re.sub(r'''[^0-9\.]''', '', item['m2'])
-            if(float(item['m2']) > 0):
+            
+            if not (item['m2'] is None):
+                item['m2'] = re.sub(r'''[^0-9\.]''', '', item['m2'])
                 item['price_m2'] = float(item['price']) / float(item['m2'])
             else:
+                item['m2'] = ''
                 item['price_m2'] = ''
+
             item['place'] = re.findall('\s([A-Z][A-zÀ-ÿ-\(\)\s]+)$', item['title'])
             item['status'] = "N"
             self.new_count += 1

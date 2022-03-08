@@ -1,6 +1,8 @@
 # athome
 
-* Scrapes athome and immotop queries to a csv file in the output subdirectory.
-* Adds new ads to the end of csv file
-* Tested on Python 3.8 and Scrapy 2.4.1
-* Command line: scrapy crawl athome-dir / scrapy crawl immotop
+* Scrapes Luxembourg athome and immotop rental ads into csv file (in the ./output subdirectory).
+* New ads are added to the end of the file
+* Tested to work with Python 3.8 and Scrapy 2.4.1
+* Command line: 
+  * ATHome.lu: scrapy crawl athome-dir
+  * Immotop: scrapy crawl immotop

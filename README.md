@@ -1,4 +1,4 @@
-# athome
+# Persoanl web crawler for ATHome and Immotop portals in Luxembourg
 
 * Scrapes Luxembourg athome and immotop rental ads into csv file (in the ./output subdirectory).
 * New ads are added to the end of the file

@@ -6,3 +6,5 @@
 * Command line: 
   * ATHome.lu: ```scrapy crawl athome-dir```
   * Immotop: ```scrapy crawl immotop```
+
+* Before starting change the URL in respective spider's directory to the one you need -> start_url = "search url from a browser"

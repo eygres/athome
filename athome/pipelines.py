@@ -29,7 +29,7 @@ class AthomePipeline:
             
             if not (item['m2'] is None):
                 item['m2'] = re.sub(r'''[^0-9\.]''', '', item['m2'])
-                item['price_m2'] = float(item['price']) / float(item['m2'])
+                item['price_m2'] = round(float(item['price']) / float(item['m2']), 2)
             else:
                 item['m2'] = ''
                 item['price_m2'] = ''

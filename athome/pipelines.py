@@ -43,7 +43,7 @@ class AthomePipeline:
 
     def open_spider(self, spider):
         self.new_count = 0
-        out_file_path = (Path(__file__).parent / f'../output/{spider.name}.csv').resolve()
+        out_file_path = (Path(__file__).parent / f'../output/{spider.name}-{spider.filter}.csv').resolve()
         logging.log(logging.INFO, f'Output path: {out_file_path}')
             
         try:

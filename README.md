@@ -4,7 +4,8 @@
 * New ads are added to the end of the file
 * Tested with Python 3.8 and Scrapy 2.4.1
 * Command line: 
-  * ATHome.lu: ```scrapy crawl athome-dir```
+  * ATHome.lu: ```scrapy crawl athome -a filter=<filter_name>```, `filter_name' refers to the name of the search URL in the config yaml file.
+      * Example: ```scrapy crawl athome -a filter=2bed-lux-central-terrace```
   * Immotop: ```scrapy crawl immotop```
-
-* Before starting change the URL in respective spiders in ```/athome/spiders/``` directory to the one you need in variable start_url = "search url from a browser"
+* Named filters are configured in the ./config folder (one yaml file per spider). 
+* The output CSV goes to ./output folder.

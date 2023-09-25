@@ -1,0 +1,3 @@
+filters:
+    2bed-lux-central-terrace: "https://www.athome.lu/en/srp/?geobounds={%22bbox%22:[[49.766630569702954,5.769882202148438],[49.514510112029,6.567764282226563]],%22zoom%22:11}&precision=5&tr=buy&bedrooms_max=2&price_min=100000&price_max=500000&terrace=true&q=a2e51548,d8380e34,7304121a,e933d7d9,53b1d1d7,e7677861,c3f33a76,9c6f0f83,e7a6acbd,4d6066a8,9110f1d7,7d12d06c,44f6ecbe&loc=L7-walferdange,L7-luxembourg,L7-niederanven,L7-sandweiler,L7-steinsel,L7-strassen,L7-kopstal,L7-lorentzweiler,L7-mersch,L7-bertrange,L7-lintgen,L7-schuttrange,L7-junglinster&ptypes=house,flat,new-property,build"
+
